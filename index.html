@@ -607,7 +607,7 @@ margin:0;
 </head>
 
 <body>
-  <div class="bg-toast" role="status">배경 이미지 로딩 중... (1.png)</div>
+  <div class="bg-toast" role="status">배경 이미지 로딩 중... (4.png)</div>
   <div class="container">
 
   <script>
@@ -820,59 +820,27 @@ margin:0;
 (function(){
   const toast = document.querySelector(".bg-toast");
   const root = document.documentElement;
+  const url = new URL("4.png", document.baseURI).href;
 
-  // 1) 상대경로(HTML과 같은 폴더에 assets가 있을 때)
-  const rel = new url("").href;
+  // CSS 변수는 4.png만 사용
+  root.style.setProperty("--hero-bg-url", `url("${url}")`);
 
-  // 2) E드라이브 고정 절대경로(HTML 위치가 달라도 동작) - 로컬 테스트용
-  const abs = null;
-
-  const candidates = [
-      // 우선순위: PNG(사용자 파일) → JPG(예비)
-      new url("").href,
-      new url("").href,
-      new url("").href,
-      new url("").href,
-      new url("").href,
-      new url("").href,
-
-      new url("").href,
-      new url("").href,
-      new url("").href,
-      new url("").href,
-      new url("").href,
-      new url("").href
-    ];
-
-  function ok(which){
-    root.style.setProperty("--hero-bg-url", `url("")`);
+  const im = new Image();
+  im.onload = function(){
     if(toast){
-      toast.textContent = "배경 이미지 로드 성공: " + which;
+      toast.textContent = "배경 이미지 로드 성공: 4.png";
       toast.style.background = "#e8fff0";
       toast.style.borderColor = "#b7f0c8";
       toast.style.color = "#0f5132";
-      setTimeout(()=>toast.remove(), 1600);
+      setTimeout(()=>toast.remove(), 1200);
     }
-  }
-
-  function fail(){
+  };
+  im.onerror = function(){
     if(toast){
-      toast.textContent = "배경 이미지 로드 실패: 1.png (HTML 파일이 '현재 폴더' 폴더에 있는지 확인)";
+      toast.textContent = "배경 이미지 로드 실패: 4.png (index.html과 같은 폴더에 4.png가 있는지 확인)";
     }
-  }
-
-  (async function(){
-    for(const u of candidates){
-      const loaded = await new Promise(res=>{
-        const im = new Image();
-        im.onload = ()=>res(true);
-        im.onerror = ()=>res(false);
-        im.src = u + (u.includes("?") ? "&" : "?") + "v=" + Date.now();
-      });
-      if(loaded){ ok(u); return; }
-    }
-    fail();
-  })();
+  };
+  im.src = url + (url.includes("?") ? "&" : "?") + "v=" + Date.now();
 })();
 </script>
 
