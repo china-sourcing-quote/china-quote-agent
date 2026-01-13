@@ -7,7 +7,7 @@
   <meta name="description" content="중국 거주 한국인이 1688·타오바오·징동 판매자 공장 여부 확인 및 공장 기준 견적을 대신 확인해드립니다." />
 
   <style>:root{
-      --hero-bg-url: url("1.png");
+      --hero-bg-url: url("4.png");
       --scale: .9; /* 전체 글자 크기 약 10% 축소 */
       --hero-scale: .95; /* 메인 타이틀만 추가 5% 축소 */
       --bg:#f5f7fb;
@@ -607,26 +607,9 @@ margin:0;
 </head>
 
 <body>
-  <div class="bg-toast" role="status">배경 이미지 로딩 중... (1.png)</div>
+  <div class="bg-toast" role="status">배경 이미지 로딩 중... (4.png)</div>
   <div class="container">
-
-  <script>
-    // URL에 ?success=1 이 있으면 간단한 성공 안내를 띄웁니다.
-    (function(){
-      try{
-        const p = new URLSearchParams(location.search);
-        if(p.get("success")==="1"){
-          const box = document.createElement("div");
-          box.style.cssText = "margin:10px 0 14px;padding:12px 14px;border-radius:14px;border:1px solid rgba(34,197,94,.30);background:rgba(34,197,94,.08);color:#14532d;font-weight:900;font-size:13px;";
-          box.textContent = "견적 요청이 접수되었습니다. 입력하신 내용이 담당자 메일로 자동 전송되었습니다.";
-          const container = document.querySelector(".container");
-          if(container) container.insertBefore(box, container.firstChild);
-        }
-      }catch(e){}
-    })();
-  </script>
-
-    <div class="topbar">
+<div class="topbar">
       <div class="brand">
         <div class="logo" aria-hidden="true"></div>
         <div>견적대행 · 공장검증</div>
@@ -752,142 +735,38 @@ margin:0;
     </section>
 
     <section class="card form-wrap" id="quote-form">
-      <div class="form-head">
-        <h2>견적 요청서</h2>
-        <div class="hint">필수 항목만 입력해도 접수 가능합니다</div>
+  <div class="form-head">
+    <h2>견적 요청서 (Google Forms)</h2>
+    <div class="hint">아래 폼에 입력하면 응답이 Google Sheets에 저장되며, 알림 설정 시 이메일로도 수신됩니다.</div>
+  </div>
+
+  <div style="padding:18px">
+    <div style="display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between;margin-bottom:12px">
+      <div class="note" style="margin:0">
+        1) Google Forms에서 <b>보내기</b> → <b>링크</b>를 복사해 아래 버튼 링크에 넣고<br/>
+        2) <b>&lt;&gt;</b> 임베드의 <b>src</b>를 아래 iframe에 넣으세요.
       </div>
 
-      <form id="rqForm" name="quote_request" method="POST" action="https://formsubmit.co/bramdole@naver.com">
-        
-        <!-- 이메일 자동 수신(FormSubmit) 설정 -->
-        <input type="hidden" name="_subject" value="[견적요청] 신규 접수" />
-        <input type="hidden" name="_template" value="table" />
-        <input type="text" name="_honey" style="display:none" />
-        <!-- 성공 후 이동(원하시면 thankyou.html로 바꿔드릴 수 있습니다) -->
-        <input type="hidden" name="_next" value="https://YOUR-DOMAIN-HERE/?success=1" />
+      <!-- 버튼용: Google Forms '링크' (짧은 링크 가능) -->
+      <a class="btn" href="YOUR_GOOGLE_FORM_LINK_HERE" target="_blank" rel="noopener">견적 요청 접수하기</a>
+    </div>
 
-<div class="grid">
-          <div class="field">
-            <label for="platform">플랫폼 선택 (필수)</label>
-            <select id="platform" name="platform" required>
-              <option value="">선택하세요</option>
-              <option>1688</option>
-              <option>타오바오</option>
-              <option>징동</option>
-              <option>기타(링크 포함)</option>
-            </select>
-          </div>
+    <div style="border:1px solid rgba(226,232,240,.95);border-radius:16px;overflow:hidden;background:#fff">
+      <!-- iframe용: Google Forms '임베드' 코드의 src -->
+      <iframe
+        src="YOUR_GOOGLE_FORM_EMBED_SRC_HERE"
+        title="견적 요청 Google Form"
+        style="width:100%;height:980px;border:0;display:block"
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+      ></iframe>
+    </div>
 
-          <div class="field">
-            <label for="service">서비스 등급 (필수)</label>
-            <select id="service" name="service" required>
-              <option value="Standard" selected>스탠다드 : 기본업체확인(공장or무역)+원본견적서 내용</option>
-            </select>
-          </div>
-
-          <div class="field span-2">
-            <label for="url">제품 판매 페이지 URL (필수)</label>
-            <input id="url" name="product_url" type="url" placeholder="https://..." required />
-          </div>
-
-          <div class="field">
-            <label for="item">품목명 / 형번 (필수)</label>
-            <input id="item" name="item_name_or_sku" type="text" placeholder="예: 모델명 / 키워드 / SKU" required />
-          </div>
-
-          <div class="field">
-            <label for="qty">수량 (필수)</label>
-            <input id="qty" name="quantity" type="number" min="1" placeholder="예: 100" required />
-          </div>
-
-          <div class="field span-2">
-            <label for="spec">규격 / 스펙 (권장)</label>
-            <input id="spec" name="specification" type="text" placeholder="예: 재질, 치수, 색상, 등급, 인증, 포장단위 등" />
-          </div>
-
-          <div class="field">
-            <label for="monthly">월 예상 수량 (선택)</label>
-            <input id="monthly" name="monthly_quantity" type="text" placeholder="예: 월 500~1,000개" />
-          </div>
-
-          <div class="field">
-            <label for="deadline">희망 납기/일정 (선택)</label>
-            <input id="deadline" name="desired_deadline" type="text" placeholder="예: 2월 말까지 / 최대 20일" />
-          </div>
-
-          <div class="field span-2">
-            <label>요구사항 (선택)</label>
-            <div class="chips">
-              <label class="chip"><input type="checkbox" name="req" value="OEM/로고 인쇄">OEM/로고 인쇄</label>
-              <label class="chip"><input type="checkbox" name="req" value="샘플 필요">샘플 필요</label>
-              <label class="chip"><input type="checkbox" name="req" value="납기 중요">납기 중요</label>
-              <label class="chip"><input type="checkbox" name="req" value="단가 우선">단가 우선</label>
-              <label class="chip"><input type="checkbox" name="req" value="품질 우선">품질 우선</label>
-            </div>
-          </div>
-
-          <div class="field span-2">
-            <label for="notes">기타 요구사항 (선택)</label>
-            <textarea id="notes" name="additional_notes" placeholder="예: 포장 요구, 색상 옵션, 불량 허용 기준, 샘플 수량 등"></textarea>
-          </div>
-<div class="field">
-            <label for="email">이메일 (필수)</label>
-            <input id="email" name="email" type="email" placeholder="회신 받을 이메일" required />
-          </div>
-
-          <div class="field">
-            <label for="kakao">카카오톡 ID (선택)</label>
-            <input id="kakao" name="kakao_id" type="text" placeholder="예: mykakaoid" />
-          </div>
-
-          <div class="field span-2">
-            <label for="phone">연락처(선택)</label>
-            <input id="phone" name="contact_phone" type="tel" placeholder="예: 010-1234-5678" />
-          </div>
-
-          <!-- Improved agreements -->
-          <div class="field span-2">
-            
-            <div class="agree-title">동의 사항 <small>필수</small></div>
-
-            <div class="agree-box">
-              <label class="agree-item">
-                <input id="agree1" name="agree_privacy" type="checkbox" value="동의" required />
-                <div class="agree-text">
-                  <b>개인정보 수집·이용 동의</b>
-                  <span>견적 요청 접수 및 회신을 위해 이메일, 연락처 등 개인정보를 수집·이용하는 것에 동의합니다.</span>
-                </div>
-              </label>
-
-              <label class="agree-item">
-                <input id="agree2" name="agree_scope" type="checkbox" value="동의" required />
-                <div class="agree-text">
-                  <b>서비스 범위에 대한 동의</b>
-                  <span>본 서비스는 구매·결제·물류를 대행하지 않으며, 판매자 검증 및 공장 기준 견적(EXW) 정리 서비스임을 이해하고 동의합니다.</span>
-                </div>
-              </label>
-
-              <label class="agree-item">
-                <input id="agree3" name="agree_request_basis" type="checkbox" value="동의" required />
-                <div class="agree-text">
-                  <b>견적 요청 기준에 대한 동의</b>
-                  <span>기본 1건은 “제품 URL 1개” 기준이며, 추가 확인(추가 URL/품목/검증 범위 확대)은 별도 비용이 발생할 수 있음에 동의합니다.</span>
-                </div>
-              </label>
-            </div>
-
-          </div>
-        </div>
-
-        <div class="form-actions">
-          <div class="note">
-            제출 후, 입력하신 연락처로 결제 안내 및 진행 절차를 회신드립니다.<br/>
-            (결제 확인 후 견적이 진행됩니다.)
-          </div>
-          <button class="btn" type="submit">견적 요청 접수하기</button>
-        </div>
-      </form>
-    </section>
+    <div class="note" style="margin-top:10px">
+      iframe이 비어 보이면: Google Forms 공유 설정을 “링크가 있는 모든 사용자”로 하고, 브라우저에서 새로고침(Ctrl+F5) 해보세요.
+    </div>
+  </div>
+</section>
 
     <footer class="card">
       <div class="footer-grid">
@@ -926,61 +805,27 @@ margin:0;
 
   <script>
 (function(){
+  // 배경 이미지는 4.png 하나만 사용합니다. (index.html과 같은 폴더에 4.png 업로드)
   const toast = document.querySelector(".bg-toast");
   const root = document.documentElement;
+  const url = new URL("4.png", document.baseURI).href;
 
-  // 1) 상대경로(HTML과 같은 폴더에 assets가 있을 때)
-  const rel = new URL("1.png", document.baseURI).href;
+  root.style.setProperty("--hero-bg-url", `url("${url}")`);
 
-  // 2) E드라이브 고정 절대경로(HTML 위치가 달라도 동작) - 로컬 테스트용
-  const abs = null;
-
-  const candidates = [
-      // 우선순위: PNG(사용자 파일) → JPG(예비)
-      new URL("1.png", document.baseURI).href,
-      new URL("./1.png", document.baseURI).href,
-      new URL("assets/1.png", document.baseURI).href,
-      new URL("./assets/1.png", document.baseURI).href,
-      new URL("images/1.png", document.baseURI).href,
-      new URL("./images/1.png", document.baseURI).href,
-
-      new URL("1.jpg", document.baseURI).href,
-      new URL("./1.jpg", document.baseURI).href,
-      new URL("assets/1.jpg", document.baseURI).href,
-      new URL("./assets/1.jpg", document.baseURI).href,
-      new URL("images/1.jpg", document.baseURI).href,
-      new URL("./images/1.jpg", document.baseURI).href
-    ];
-
-  function ok(which){
-    root.style.setProperty("--hero-bg-url", `url("${which}")`);
-    if(toast){
-      toast.textContent = "배경 이미지 로드 성공: " + which;
-      toast.style.background = "#e8fff0";
-      toast.style.borderColor = "#b7f0c8";
-      toast.style.color = "#0f5132";
-      setTimeout(()=>toast.remove(), 1600);
-    }
-  }
-
-  function fail(){
-    if(toast){
-      toast.textContent = "배경 이미지 로드 실패: 1.png (HTML 파일이 '현재 폴더' 폴더에 있는지 확인)";
-    }
-  }
-
-  (async function(){
-    for(const u of candidates){
-      const loaded = await new Promise(res=>{
-        const im = new Image();
-        im.onload = ()=>res(true);
-        im.onerror = ()=>res(false);
-        im.src = u + (u.includes("?") ? "&" : "?") + "v=" + Date.now();
-      });
-      if(loaded){ ok(u); return; }
-    }
-    fail();
-  })();
+  const im = new Image();
+  im.onload = function(){
+    if(!toast) return;
+    toast.textContent = "배경 이미지 로드 성공: 4.png";
+    toast.style.background = "#e8fff0";
+    toast.style.borderColor = "#b7f0c8";
+    toast.style.color = "#0f5132";
+    setTimeout(()=>toast.remove(), 1200);
+  };
+  im.onerror = function(){
+    if(!toast) return;
+    toast.textContent = "배경 이미지 로드 실패: 4.png (index.html과 같은 폴더에 4.png가 있는지 확인)";
+  };
+  im.src = url + (url.includes("?") ? "&" : "?") + "v=" + Date.now();
 })();
 </script>
 
