@@ -1,0 +1,1046 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>중국 1688·타오바오·징동 견적 대행 서비스</title>
+  <meta name="description" content="중국 거주 한국인이 1688·타오바오·징동 판매자 공장 여부 확인 및 공장 기준 견적을 대신 확인해드립니다." />
+
+  <style>:root{
+      --hero-bg-url: url("1.png");
+      --scale: .9; /* 전체 글자 크기 약 10% 축소 */
+      --hero-scale: .95; /* 메인 타이틀만 추가 5% 축소 */
+      --bg:#f5f7fb;
+      --card:#ffffff;
+      --text:#0f172a;
+      --muted:#475569;
+      --line:#e2e8f0;
+      --primary:#1e4fbf;
+      --primary2:#163b8f;
+      --accent:#f97316;
+      --ok:#0f766e;
+      --shadow: 0 12px 30px rgba(15,23,42,.08);
+      --radius: 16px;
+    }
+    *{box-sizing:border-box}
+    body{
+margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Noto Sans KR", Arial, sans-serif;
+      color:var(--text);
+      background: var(--bg);
+    }
+    .container{max-width:1100px;margin:0 auto;padding:24px}
+    .topbar{
+      display:flex;align-items:center;justify-content:space-between;gap:12px;
+      padding:10px 0;
+    }
+    .brand{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:-.3px}
+    .logo{
+      width:36px;height:36px;border-radius:10px;
+      background: linear-gradient(135deg, var(--primary), #3b82f6);
+      box-shadow: 0 10px 20px rgba(30,79,191,.18);
+      position:relative;
+    }
+    .logo:after{content:"";position:absolute;inset:9px;border-radius:8px;border:2px solid rgba(255,255,255,.85)}
+    .pill{
+      display:inline-flex;align-items:center;gap:8px;
+      border:1px solid rgba(30,79,191,.18);
+      color:var(--primary2);
+      padding:7px 10px;border-radius:999px;font-size: calc(13px * var(--scale));font-weight:800;
+      white-space:nowrap;
+    }
+    .pill .dot{width:8px;height:8px;border-radius:999px;background:var(--accent)}
+    .card{
+      background:var(--card);
+      border:1px solid rgba(226,232,240,.9);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    /* HERO */
+    .hero{
+      margin-top:14px;
+      display:grid;grid-template-columns: 1.15fr .85fr;gap:18px;
+      align-items:stretch;
+    }
+    .hero-left{padding:28px 28px 22px;position:relative;overflow:hidden}
+    .hero-left:before{
+      content:"";
+      position:absolute;right:-140px;top:-160px;width:360px;height:360px;border-radius:50%;
+      background: none;
+    }
+    .h1{margin:0;font-size: calc(40px * var(--scale) * var(--hero-scale));line-height:1.15;letter-spacing:-1px}
+    .h1 .em{color:var(--primary)}
+    .sub{
+      margin:14px 0 0;color:var(--muted);font-size: calc(15.5px * var(--scale));line-height:1.7;max-width:60ch
+    }
+    .sub strong{color:var(--text)}
+    .checks{margin:16px 0 18px;display:grid;gap:8px;padding:0;list-style:none;color:#0b255f;font-weight:800}
+    .checks li{display:flex;align-items:flex-start;gap:10px}
+    .check{
+      width:22px;height:22px;border-radius:8px;
+      background:rgba(15,118,110,.10);
+      border:1px solid rgba(15,118,110,.18);
+      display:inline-grid;place-items:center;color:var(--ok);
+      flex:0 0 auto;margin-top:2px;
+    }
+    .check svg{width:14px;height:14px}
+    .cta-row{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+    .btn{
+      appearance:none;border:none;cursor:pointer;
+      background: linear-gradient(135deg, var(--primary), #2563eb);
+      color:#fff;font-weight:900;
+      padding:12px 16px;border-radius:12px;
+      box-shadow: 0 12px 18px rgba(30,79,191,.22);
+      display:inline-flex;align-items:center;gap:10px;
+    }
+    .btn:active{transform: translateY(1px)}
+    .btn-secondary{
+      background:#fff;color:var(--primary2);
+      border:1px solid rgba(30,79,191,.25);
+      box-shadow:none;font-weight:900;
+      padding:12px 16px;border-radius:12px;
+      cursor:pointer;
+    }
+    .meta{margin-top:12px;display:flex;flex-wrap:wrap;gap:10px;color:var(--muted);font-size: calc(13px * var(--scale))}
+    .meta span{background:rgba(2,6,23,.03);border:1px solid rgba(2,6,23,.06);padding:7px 10px;border-radius:999px}
+
+    /* HERO RIGHT with background image (top-right) */
+    .hero-right{
+      padding:18px;
+      display:flex;flex-direction:column;gap:12px;
+      position:relative;
+      overflow:hidden;
+      /* 배경 이미지는 pseudo-element로 처리하여 (1) 흐림(blur) 적용, (2) 가독성 확보 */
+      background: linear-gradient(135deg, rgba(255,255,255,.98), rgba(255,255,255,.94));
+    }
+    .hero-right::before{
+      content:"";
+      position:absolute;
+      inset:-18px;
+      background: var(--hero-bg-url) no-repeat right top / cover;
+      opacity: .20;                 /* 이미지 존재감은 낮게 */
+      filter: blur(10px) grayscale(.25) saturate(1.05) brightness(1.05);
+      transform: scale(1.06);
+      z-index: 0;
+      pointer-events:none;
+    }
+    .hero-right::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      /* 흰색 베일을 한 겹 더 얹어 텍스트 가독성 확보 */
+      background: linear-gradient(135deg, rgba(255,255,255,.86), rgba(255,255,255,.92));
+      z-index: 1;
+      pointer-events:none;
+    }
+    .hero-right > *{
+      position:relative;
+      z-index:2;
+    }
+    .badge{
+      display:flex;justify-content:space-between;align-items:center;gap:10px;
+      background: linear-gradient(135deg, rgba(249,115,22,.12), rgba(249,115,22,.02));
+      border:1px solid rgba(249,115,22,.22);
+      padding:12px 14px;border-radius:14px;
+      backdrop-filter: blur(4px);
+    }
+    .badge strong{font-size: calc(14px * var(--scale))}
+    .badge small{color:var(--muted)}
+    .tags{display:flex;flex-wrap:wrap;gap:8px}
+    .tag{
+      font-size: calc(12.5px * var(--scale));font-weight:900;color:#0b255f;
+      background:rgba(30,79,191,.08);
+      border:1px solid rgba(30,79,191,.18);
+      padding:7px 10px;border-radius:999px;
+      backdrop-filter: blur(4px);
+    }
+    .photo{
+      margin-top:4px;
+      border-radius:14px;
+      border:1px solid rgba(226,232,240,.95);
+      background:rgba(255,255,255,.88);
+      padding:14px;
+      display:flex;align-items:center;gap:12px;
+      backdrop-filter: blur(6px);
+    }
+    .avatar{
+      width:54px;height:54px;border-radius:16px;
+      background: linear-gradient(135deg, rgba(30,79,191,.25), rgba(249,115,22,.18));
+      border:1px solid rgba(226,232,240,.95);
+      display:grid;place-items:center;font-weight:1000;color:#0b255f;
+      line-height:1.05;text-align:center;
+    }
+    .photo .who{display:flex;flex-direction:column;gap:2px}
+    .photo .who b{font-size: calc(14.5px * var(--scale))}
+    .photo .who span{font-size: calc(13px * var(--scale));color:var(--muted);line-height:1.4}
+    .row{
+      display:flex;flex-wrap:wrap;gap:10px;align-items:center;
+      padding:10px 12px;border-radius:12px;
+      border:1px dashed rgba(226,232,240,.95);
+      background:rgba(255,255,255,.78);
+      backdrop-filter: blur(6px);
+    }
+    .row b{font-size: calc(13px * var(--scale))}
+    .note{color:var(--muted);font-size: calc(13px * var(--scale));line-height:1.45}
+
+    /* FEATURES */
+    .section{
+      margin-top:16px;
+      display:grid;grid-template-columns: 1fr 1fr 1fr;
+      gap:12px;
+    }
+    .feature{padding:14px 14px 12px;display:flex;gap:12px;align-items:flex-start}
+    .icon{
+      width:38px;height:38px;border-radius:14px;
+      background:rgba(30,79,191,.10);
+      border:1px solid rgba(30,79,191,.18);
+      display:grid;place-items:center;color:var(--primary2);
+      flex:0 0 auto;
+    }
+    .feature b{display:block;margin-top:2px}
+    .feature p{margin:6px 0 0;color:var(--muted);font-size: calc(13.5px * var(--scale));line-height:1.55}
+
+    /* FORM */
+    .form-wrap{margin-top:14px;padding:0;overflow:hidden}
+    .form-head{
+      padding:16px 18px;
+      background: linear-gradient(135deg, rgba(30,79,191,.12), rgba(30,79,191,.02));
+      border-bottom:1px solid rgba(226,232,240,.95);
+      display:flex;align-items:center;justify-content:space-between;gap:12px;
+    }
+    .form-head h2{margin:0;font-size: calc(18px * var(--scale));letter-spacing:-.2px}
+    .form-head .hint{font-size: calc(13px * var(--scale));color:var(--muted)}
+    form{padding:18px}
+    .grid{display:grid;grid-template-columns: 1fr 1fr;gap:12px}
+    .field{display:flex;flex-direction:column;gap:7px}
+    label{font-weight:900;font-size: calc(13px * var(--scale));color:#0b255f}
+    input, select, textarea{
+      width:100%;
+      border:1px solid rgba(226,232,240,.95);
+      background:#fff;
+      padding:11px 12px;border-radius:12px;
+      outline:none;
+      font-size: calc(14px * var(--scale));
+    }
+    textarea{min-height:110px;resize:vertical}
+    input:focus, select:focus, textarea:focus{
+      border-color: rgba(30,79,191,.45);
+      box-shadow: 0 0 0 4px rgba(30,79,191,.10);
+    }
+    .span-2{grid-column: 1 / -1}
+    .chips{
+      overflow-x: auto;
+      overflow-y: hidden;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none; /* Firefox */display:flex;flex-wrap: nowrap;gap:10px}
+    .chip{
+      display:flex;align-items:center;gap:8px;
+      padding:8px 10px;border-radius:999px;
+      border:1px solid rgba(226,232,240,.95);
+      background:#fff;
+      font-size: calc(13px * var(--scale));color:var(--text)
+    }
+    .chip input{width:auto}
+
+    /* AGREEMENTS (improved) */
+    .agree-box{
+      border:1px solid rgba(226,232,240,.95);
+      background:rgba(2,6,23,.02);
+      border-radius:16px;
+      padding:14px;
+      display:grid;
+      gap:10px;
+    }
+    .agree-item{
+      display:flex;
+      gap:12px;
+      align-items:flex-start;
+      padding:12px 12px;
+      border-radius:14px;
+      background:#fff;
+      border:1px solid rgba(226,232,240,.95);
+    }
+    .agree-item input{margin-top:4px}
+    .agree-text{display:flex;flex-direction:column;gap:3px}
+    .agree-text b{font-size: calc(13.5px * var(--scale));color:var(--text)}
+    .agree-text span{font-size: calc(13px * var(--scale));color:var(--muted);line-height:1.5}
+    .agree-title{
+      font-weight:1000;color:#0b255f;margin-bottom:2px;font-size: calc(13px * var(--scale));
+      display:flex;align-items:center;gap:8px;
+    }
+    .agree-title small{
+      font-weight:900;color:#9a3412;
+      background:rgba(249,115,22,.12);
+      border:1px solid rgba(249,115,22,.22);
+      padding:3px 8px;border-radius:999px;
+    }
+
+    .form-actions{
+      margin-top:14px;
+      display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between;
+      padding-top:14px;border-top:1px solid rgba(226,232,240,.95);
+    }
+
+    footer{margin:18px 0 10px;padding:18px;color:var(--muted);font-size: calc(12.5px * var(--scale));line-height:1.7}
+    .footer-grid{display:grid;grid-template-columns: 1fr 1fr 1fr;gap:12px}
+    .smalltitle{font-weight:1000;color:var(--text);margin-bottom:6px}
+    ul.clean{margin:0;padding-left:18px}
+
+    @media (max-width: 920px){
+      .hero{grid-template-columns:1fr}
+      .section{grid-template-columns:1fr}
+      .grid{grid-template-columns:1fr}
+      .footer-grid{grid-template-columns:1fr}
+      .h1{font-size: calc(34px * var(--scale) * var(--hero-scale))}
+      .hero-right{background-position: center top}
+    }
+
+    /* ===== Agreements (Final, Robust) ===== */
+    .agree-box{
+      border:1px solid rgba(226,232,240,.95);
+      background:rgba(2,6,23,.02);
+      border-radius:16px;
+      padding:14px;
+      display:grid;
+      gap:10px;
+    }
+    .agree-item{
+      display:flex;
+      align-items:flex-start;
+      gap:12px;
+      padding:12px 12px;
+      border-radius:14px;
+      background:#fff;
+      border:1px solid rgba(226,232,240,.95);
+      cursor:pointer;
+    }
+    .agree-item input[type="checkbox"]{
+      width:18px;
+      height:18px;
+      margin:3px 0 0 0;
+      flex:0 0 auto;
+      accent-color: var(--primary);
+    }
+    .agree-text{
+      flex:1 1 auto;
+      min-width:0;
+      display:flex;
+      flex-direction:column;
+      gap:3px;
+      text-align:left;
+    }
+    .agree-text b{
+      font-weight:1000;
+      color:var(--text);
+      line-height:1.25;
+    }
+    .agree-text span{
+      color:var(--muted);
+      line-height:1.55;
+      word-break:keep-all;
+    }
+    
+
+    .chips::-webkit-scrollbar{display:none}
+
+    /* HERO-RIGHT BG */
+    .hero-right{
+      position: relative;
+      overflow: hidden;
+      background:
+        linear-gradient(135deg, rgba(255,255,255,.60), rgba(255,255,255,.38)),
+        var(--hero-bg-url) no-repeat right top / cover;
+    }
+
+    /* PAGE BG */
+    body{
+      position: relative;
+      overflow-x: hidden;
+    }
+    body::before{
+      content: none; /* 전체 페이지 배경이미지는 비활성화 (가독성/디자인 정돈) */
+    }
+
+    .bg-toast{
+      position: fixed;
+      left: 16px;
+      bottom: 16px;
+      z-index: 9999;
+      padding: 10px 12px;
+      border-radius: 12px;
+      background: #fff8e6;
+      border: 1px solid #ffe2a8;
+      color: #7a4b00;
+      font-size: 12.5px;
+      box-shadow: 0 10px 28px rgba(15,23,42,.12);
+      max-width: 560px;
+    }
+
+
+    /* 모바일/좁은 화면에서는 자연스럽게 세로 배치 */
+    @media (max-width: 720px){
+      .form-actions{
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        justify-content: flex-start;
+        gap: 10px;
+      }
+      .form-actions .note{
+        position: static;
+        transform: none;
+        max-width: none;
+        text-align: left;
+      }
+      .form-actions .btn{
+        width: 100%;
+        justify-content: center;
+      }
+    }
+
+
+    /* ===== Form actions: button centered, note centered (updated) ===== */
+    .form-actions{
+      display: flex;
+      flex-direction: column;
+      align-items: center; /* 버튼/안내문 모두 가운데 정렬 */
+      gap: 10px;
+      position: relative;
+    }
+    /* 버튼을 위로(첫 번째), 안내문은 아래(두 번째) */
+    .form-actions .btn{
+      order: 0;
+      align-self: center;
+    }
+    .form-actions .note{
+      order: 1;
+      align-self: center;
+      text-align: center;
+      max-width: 900px;
+      margin: 0;
+    }
+    @media (max-width: 720px){
+      .form-actions{
+        align-items: stretch;
+      }
+      .form-actions .btn{
+        width: 100%;
+        justify-content: center;
+      }
+      .form-actions .note{
+        max-width: none;
+        text-align: left;
+      }
+    }
+
+    /* ===== TOPBAR center brand image (3.png) ===== */
+    .topbar{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:14px;
+    }
+    /* 가운데 영역을 넓게 확보 (빨간 표시 영역) */
+    .topbar-center{
+      flex: 1 1 auto;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      min-width: 0;
+      height: clamp(52px, 6.5vw, 86px);
+      padding: 6px 12px;
+    }
+    /* 이미지가 영역을 꽉 채우도록(필요 시 약간 크롭) */
+    .topbar-center img{
+      width: 100%;
+      height: 100%;
+      object-fit: contain;   /* 이미지 전체 보이기 */
+      object-position: center;
+      display:block;
+      border-radius: 14px;
+      opacity: .98;
+      box-shadow: 0 10px 22px rgba(15,23,42,.10);
+      pointer-events:none;
+      user-select:none;
+    }
+    @media (max-width: 720px){
+      .topbar{
+        flex-wrap: wrap;
+        justify-content: center;
+        gap:10px;
+      }
+      .topbar-center{
+        order: 2;
+        flex: 1 1 100%;
+        padding: 2px 0 0;
+        height: clamp(46px, 12vw, 70px);
+      }
+      .brand{order:1}
+      .pill{order:3}
+      .topbar-center img{
+        border-radius: 12px;
+      }
+    }
+    @media (max-width: 720px){
+      .topbar{
+        flex-wrap: wrap;
+        justify-content: center;
+        gap:10px;
+      }
+      .topbar-center{
+        order: 2;
+        flex: 1 1 100%;
+        padding: 2px 0 0;
+      }
+      .brand{order:1}
+      .pill{order:3}
+      .topbar-center img{
+        width: min(520px, 86vw);
+        height: 40px;
+      }
+    }
+
+
+    /* ===== Pricing Modal ===== */
+    .modal-backdrop{
+      position: fixed;
+      inset: 0;
+      background: rgba(15,23,42,.45);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 18px;
+      z-index: 9999;
+    }
+    .modal-backdrop.show{ display:flex; }
+    .modal{
+      width: min(520px, 92vw);
+      border-radius: 18px;
+      background: rgba(255,255,255,.98);
+      border: 1px solid rgba(226,232,240,.95);
+      box-shadow: 0 24px 60px rgba(15,23,42,.22);
+      overflow: hidden;
+    }
+    .modal-head{
+      display:flex;
+      align-items:center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 16px 18px;
+      background: linear-gradient(180deg, rgba(37,99,235,.10), rgba(37,99,235,.04));
+      border-bottom: 1px solid rgba(226,232,240,.95);
+    }
+    .modal-title{
+      margin:0;
+      font-size: 15px;
+      font-weight: 900;
+      color: var(--ink);
+      letter-spacing: -.2px;
+      display:flex;
+      align-items:center;
+      gap: 10px;
+    }
+    .modal-title .dot{
+      width: 10px; height: 10px; border-radius: 999px;
+      background: var(--accent);
+      box-shadow: 0 0 0 6px rgba(37,99,235,.14);
+      flex: 0 0 auto;
+    }
+    .modal-close{
+      border: 1px solid rgba(203,213,225,.9);
+      background: rgba(255,255,255,.9);
+      color: rgba(30,41,59,.9);
+      font-weight: 900;
+      border-radius: 12px;
+      padding: 8px 10px;
+      cursor: pointer;
+      line-height: 1;
+    }
+    .modal-close:hover{ filter: brightness(.98); }
+    .modal-body{
+      padding: 16px 18px 18px;
+    }
+    .price-card{
+      border: 1px solid rgba(226,232,240,.95);
+      background: rgba(248,250,252,.95);
+      border-radius: 16px;
+      padding: 14px 14px 12px;
+      display:flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+    .price-left{
+      min-width: 0;
+    }
+    .price-tier{
+      margin:0 0 6px;
+      font-size: 13.5px;
+      font-weight: 900;
+      color: var(--ink);
+      letter-spacing: -.2px;
+    }
+    .price-desc{
+      margin:0;
+      font-size: 12.5px;
+      color: rgba(51,65,85,.85);
+      font-weight: 700;
+      line-height: 1.35;
+    }
+    .price-amount{
+      font-size: 22px;
+      font-weight: 950;
+      color: var(--accent);
+      letter-spacing: -.4px;
+      white-space: nowrap;
+    }
+    .modal-note{
+      margin: 12px 2px 0;
+      font-size: 12px;
+      color: rgba(51,65,85,.78);
+      font-weight: 700;
+      line-height: 1.45;
+    }
+
+</style>
+</head>
+
+<body>
+  <div class="bg-toast" role="status">배경 이미지 로딩 중... (1.png)</div>
+  <div class="container">
+
+  <script>
+    // URL에 ?success=1 이 있으면 간단한 성공 안내를 띄웁니다.
+    (function(){
+      try{
+        const p = new URLSearchParams(location.search);
+        if(p.get("success")==="1"){
+          const box = document.createElement("div");
+          box.style.cssText = "margin:10px 0 14px;padding:12px 14px;border-radius:14px;border:1px solid rgba(34,197,94,.30);background:rgba(34,197,94,.08);color:#14532d;font-weight:900;font-size:13px;";
+          box.textContent = "견적 요청이 접수되었습니다. 입력하신 내용이 담당자 메일로 자동 전송되었습니다.";
+          const container = document.querySelector(".container");
+          if(container) container.insertBefore(box, container.firstChild);
+        }
+      }catch(e){}
+    })();
+  </script>
+
+    <div class="topbar">
+      <div class="brand">
+        <div class="logo" aria-hidden="true"></div>
+        <div>견적대행 · 공장검증</div>
+      </div>
+      <div class="topbar-center">
+        <img src="4.png" alt="브랜드 이미지" loading="lazy" />
+      </div>
+
+      <div class="pill"><span class="dot"></span>영업일 24~48시간 내 회신</div>
+    </div>
+
+    <section class="hero">
+      <div class="card hero-left">
+        <h1 class="h1">
+          중국 1688·타오바오·징동 판매자<br/>
+          <span class="em">견적 대행 서비스</span>
+        </h1>
+
+        <p class="sub">
+          중국에 거주 중인 한국인이, 사입·해외직구 전 <strong>유통상인지 제조사인지</strong> 먼저 검증하고
+          <strong>공장 기준 견적(EXW)</strong>을 정리해드립니다.<br/>
+          구매·결제·물류 대행 없이 <strong>검증과 견적만 제공</strong>하는 유료 서비스입니다.
+        </p>
+
+        <ul class="checks">
+          <li>
+            <span class="check" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M20 6 9 17l-5-5"></path>
+              </svg>
+            </span>
+            판매자 공장 여부 확인
+          </li>
+          <li>
+            <span class="check" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M20 6 9 17l-5-5"></path>
+              </svg>
+            </span>
+            공장 기준 단가·MOQ 제공 (EXW)
+          </li>
+          <li>
+            <span class="check" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M20 6 9 17l-5-5"></path>
+              </svg>
+            </span>
+            사입 리스크 간단 코멘트
+          </li>
+        </ul>
+
+        <div class="cta-row">
+          <button class="btn" type="button" onclick="document.getElementById('quote-form').scrollIntoView({behavior:'smooth'});">
+            견적 요청하기 <span aria-hidden="true">→</span>
+          </button>
+          <button class="btn-secondary" type="button" onclick="openPriceModal()">요금 안내 보기</button>
+        </div>
+
+        <div class="meta">
+          <span>결제 확인 후 진행</span>
+          <span>제품 URL 1개</span>
+          <span>구매대행 아님</span>
+        </div>
+      </div>
+
+      <aside class="card hero-right">
+        <div class="badge">
+          <div>
+            <strong>1688 · 타오바오 · 징동</strong><br/>
+            <small>링크만 넣으면 확인해드립니다</small>
+          </div>
+          <div class="pill" style="background:rgba(249,115,22,.12);border-color:rgba(249,115,22,.22);color:#9a3412;">
+            <span class="dot" style="background:var(--accent)"></span>24~48h
+          </div>
+        </div>
+
+        <div class="tags">
+          <span class="tag">공장 여부</span>
+          <span class="tag">MOQ</span>
+          <span class="tag">EXW 단가</span>
+          <span class="tag">OEM 옵션</span>
+          <span class="tag">리스크 코멘트</span>
+        </div>
+
+        <div class="photo">
+          <div class="avatar" aria-hidden="true">KR<br/>CN</div>
+          <div class="who">
+            <b>중국 거주 한국인 운영</b>
+            <span>현지 플랫폼·판매자 커뮤니케이션을 기반으로<br/>확인 가능한 범위 내에서 신속히 정리합니다.</span>
+          </div>
+        </div>
+
+        <div class="row">
+          <b>권장:</b>
+          <div class="note">도면/사진/스펙(PDF) 첨부 시 정확도가 크게 올라갑니다.</div>
+        </div>
+
+        </aside>
+    </section>
+
+    <section class="section">
+      <div class="card feature">
+        <div class="icon" aria-hidden="true">🏭</div>
+        <div>
+          <b>판매자 유형 1차 판단</b>
+          <p>제조/무역/혼합 가능성을 분류하고, 제품군 일치 여부를 함께 확인합니다.</p>
+        </div>
+      </div>
+      <div class="card feature">
+        <div class="icon" aria-hidden="true">🛡️</div>
+        <div>
+          <b>사입 리스크 최소화</b>
+          <p>“공장 직영” 표기만으로는 판단이 어려운 부분을 체크리스트 기준으로 정리합니다.</p>
+        </div>
+      </div>
+      <div class="card feature">
+        <div class="icon" aria-hidden="true">🧾</div>
+        <div>
+          <b>공장 기준 견적 정리</b>
+          <p>MOQ, EXW 단가, 기본 납기 등 핵심 항목만 간단히 정리해 드립니다.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="card form-wrap" id="quote-form">
+      <div class="form-head">
+        <h2>견적 요청서</h2>
+        <div class="hint">필수 항목만 입력해도 접수 가능합니다</div>
+      </div>
+
+      <form id="rqForm" name="quote_request" method="POST" action="https://formsubmit.co/bramdole@naver.com">
+        
+        <!-- 이메일 자동 수신(FormSubmit) 설정 -->
+        <input type="hidden" name="_subject" value="[견적요청] 신규 접수" />
+        <input type="hidden" name="_template" value="table" />
+        <input type="hidden" name="_captcha" value="false" />
+        <!-- 성공 후 이동(원하시면 thankyou.html로 바꿔드릴 수 있습니다) -->
+        <input type="hidden" name="_next" value="https://YOUR-DOMAIN-HERE/?success=1" />
+
+<div class="grid">
+          <div class="field">
+            <label for="platform">플랫폼 선택 (필수)</label>
+            <select id="platform" name="platform" required>
+              <option value="">선택하세요</option>
+              <option>1688</option>
+              <option>타오바오</option>
+              <option>징동</option>
+              <option>기타(링크 포함)</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="service">서비스 등급 (필수)</label>
+            <select id="service" name="service" required>
+              <option value="Standard" selected>스탠다드 : 기본업체확인(공장or무역)+원본견적서 내용</option>
+            </select>
+          </div>
+
+          <div class="field span-2">
+            <label for="url">제품 판매 페이지 URL (필수)</label>
+            <input id="url" name="product_url" type="url" placeholder="https://..." required />
+          </div>
+
+          <div class="field">
+            <label for="item">품목명 / 형번 (필수)</label>
+            <input id="item" name="item_name_or_sku" type="text" placeholder="예: 모델명 / 키워드 / SKU" required />
+          </div>
+
+          <div class="field">
+            <label for="qty">수량 (필수)</label>
+            <input id="qty" name="quantity" type="number" min="1" placeholder="예: 100" required />
+          </div>
+
+          <div class="field span-2">
+            <label for="spec">규격 / 스펙 (권장)</label>
+            <input id="spec" name="specification" type="text" placeholder="예: 재질, 치수, 색상, 등급, 인증, 포장단위 등" />
+          </div>
+
+          <div class="field">
+            <label for="monthly">월 예상 수량 (선택)</label>
+            <input id="monthly" name="monthly_quantity" type="text" placeholder="예: 월 500~1,000개" />
+          </div>
+
+          <div class="field">
+            <label for="deadline">희망 납기/일정 (선택)</label>
+            <input id="deadline" name="desired_deadline" type="text" placeholder="예: 2월 말까지 / 최대 20일" />
+          </div>
+
+          <div class="field span-2">
+            <label>요구사항 (선택)</label>
+            <div class="chips">
+              <label class="chip"><input type="checkbox" name="req" value="OEM/로고 인쇄">OEM/로고 인쇄</label>
+              <label class="chip"><input type="checkbox" name="req" value="샘플 필요">샘플 필요</label>
+              <label class="chip"><input type="checkbox" name="req" value="납기 중요">납기 중요</label>
+              <label class="chip"><input type="checkbox" name="req" value="단가 우선">단가 우선</label>
+              <label class="chip"><input type="checkbox" name="req" value="품질 우선">품질 우선</label>
+            </div>
+          </div>
+
+          <div class="field span-2">
+            <label for="notes">기타 요구사항 (선택)</label>
+            <textarea id="notes" name="additional_notes" placeholder="예: 포장 요구, 색상 옵션, 불량 허용 기준, 샘플 수량 등"></textarea>
+          </div>
+
+          <div class="field span-2">
+            <label for="file">첨부 (선택)</label>
+            <input id="file" name="attachment_file" type="file" />
+            <div class="note">MVP 데모에서는 파일이 실제로 전송되지는 않습니다(서버 연동 시 가능).</div>
+          </div>
+
+          <div class="field">
+            <label for="email">이메일 (필수)</label>
+            <input id="email" name="reply_email" type="email" placeholder="회신 받을 이메일" required />
+          </div>
+
+          <div class="field">
+            <label for="kakao">카카오톡 ID (선택)</label>
+            <input id="kakao" name="kakao_id" type="text" placeholder="예: mykakaoid" />
+          </div>
+
+          <div class="field span-2">
+            <label for="phone">연락처(선택)</label>
+            <input id="phone" name="contact_phone" type="tel" placeholder="예: 010-1234-5678" />
+          </div>
+
+          <!-- Improved agreements -->
+          <div class="field span-2">
+            
+            <div class="agree-title">동의 사항 <small>필수</small></div>
+
+            <div class="agree-box">
+              <label class="agree-item">
+                <input id="agree1" name="agree_privacy" type="checkbox" value="동의" required />
+                <div class="agree-text">
+                  <b>개인정보 수집·이용 동의</b>
+                  <span>견적 요청 접수 및 회신을 위해 이메일, 연락처 등 개인정보를 수집·이용하는 것에 동의합니다.</span>
+                </div>
+              </label>
+
+              <label class="agree-item">
+                <input id="agree2" name="agree_scope" type="checkbox" value="동의" required />
+                <div class="agree-text">
+                  <b>서비스 범위에 대한 동의</b>
+                  <span>본 서비스는 구매·결제·물류를 대행하지 않으며, 판매자 검증 및 공장 기준 견적(EXW) 정리 서비스임을 이해하고 동의합니다.</span>
+                </div>
+              </label>
+
+              <label class="agree-item">
+                <input id="agree3" name="agree_request_basis" type="checkbox" value="동의" required />
+                <div class="agree-text">
+                  <b>견적 요청 기준에 대한 동의</b>
+                  <span>기본 1건은 “제품 URL 1개” 기준이며, 추가 확인(추가 URL/품목/검증 범위 확대)은 별도 비용이 발생할 수 있음에 동의합니다.</span>
+                </div>
+              </label>
+            </div>
+
+          </div>
+        </div>
+          </div>
+        </div>
+
+        <div class="form-actions">
+          <div class="note">
+            제출 후, 입력하신 연락처로 결제 안내 및 진행 절차를 회신드립니다.<br/>
+            (결제 확인 후 견적이 진행됩니다.)
+          </div>
+          <button class="btn" type="submit">견적 요청 접수하기</button>
+        </div>
+      </form>
+    </section>
+
+    <footer class="card">
+      <div class="footer-grid">
+        <div style="padding:18px 0 0 0;">
+          <div class="smalltitle">제공 범위</div>
+          <ul class="clean">
+            <li>판매자 유형/공장 가능성 확인(확인 가능한 범위 내)</li>
+            <li>MOQ, EXW 단가, 기본 납기 등 핵심 견적 항목 정리</li>
+            <li>사입 리스크 간단 코멘트</li>
+          </ul>
+        </div>
+        <div style="padding:18px 0 0 0;">
+          <div class="smalltitle">미제공 범위 / 안내</div>
+          <ul class="clean">
+            <li>구매 대행, 결제 대행, 물류/통관 대행은 진행하지 않습니다.</li>
+            <li>플랫폼/판매자 정책 및 제공 정보에 따라 확인 범위가 제한될 수 있습니다.</li>
+            <li>본 페이지는 MVP 데모이며, 제출 데이터 저장/전송은 추후 연동됩니다.</li>
+          </ul>
+        </div>
+        <div style="padding:18px 0 0 0;">
+          <div class="smalltitle">연락처</div>
+          <ul class="clean">
+            <li>담당: 김희수</li>
+            <li>중국 휴대폰: <a href="tel:+8613591739854" style="color:inherit;text-decoration:none;">+86 135 9173 9854</a></li>
+            <li>한국 휴대폰: <a href="tel:+821065160658" style="color:inherit;text-decoration:none;">+82 10 6516 0658</a></li>
+            <li>이메일: <a href="mailto:bramdole@naver.com" style="color:inherit;text-decoration:none;">bramdole@naver.com</a></li>
+</ul>
+        </div>
+
+      </div>
+      <div style="padding-top:10px;">
+        © 견적대행 · 공장검증
+      </div>
+    </footer>
+  </div>
+
+  <script>
+(function(){
+  const toast = document.querySelector(".bg-toast");
+  const root = document.documentElement;
+
+  // 1) 상대경로(HTML과 같은 폴더에 assets가 있을 때)
+  const rel = new URL("1.png", document.baseURI).href;
+
+  // 2) E드라이브 고정 절대경로(HTML 위치가 달라도 동작) - 로컬 테스트용
+  const abs = null;
+
+  const candidates = [
+      // 우선순위: PNG(사용자 파일) → JPG(예비)
+      new URL("1.png", document.baseURI).href,
+      new URL("./1.png", document.baseURI).href,
+      new URL("assets/1.png", document.baseURI).href,
+      new URL("./assets/1.png", document.baseURI).href,
+      new URL("images/1.png", document.baseURI).href,
+      new URL("./images/1.png", document.baseURI).href,
+
+      new URL("1.jpg", document.baseURI).href,
+      new URL("./1.jpg", document.baseURI).href,
+      new URL("assets/1.jpg", document.baseURI).href,
+      new URL("./assets/1.jpg", document.baseURI).href,
+      new URL("images/1.jpg", document.baseURI).href,
+      new URL("./images/1.jpg", document.baseURI).href
+    ];
+
+  function ok(which){
+    root.style.setProperty("--hero-bg-url", `url("${which}")`);
+    if(toast){
+      toast.textContent = "배경 이미지 로드 성공: " + which;
+      toast.style.background = "#e8fff0";
+      toast.style.borderColor = "#b7f0c8";
+      toast.style.color = "#0f5132";
+      setTimeout(()=>toast.remove(), 1600);
+    }
+  }
+
+  function fail(){
+    if(toast){
+      toast.textContent = "배경 이미지 로드 실패: 1.png (HTML 파일이 '현재 폴더' 폴더에 있는지 확인)";
+    }
+  }
+
+  (async function(){
+    for(const u of candidates){
+      const loaded = await new Promise(res=>{
+        const im = new Image();
+        im.onload = ()=>res(true);
+        im.onerror = ()=>res(false);
+        im.src = u + (u.includes("?") ? "&" : "?") + "v=" + Date.now();
+      });
+      if(loaded){ ok(u); return; }
+    }
+    fail();
+  })();
+})();
+</script>
+
+
+  <!-- 요금 안내 모달 -->
+  <div class="modal-backdrop" id="priceModal" role="dialog" aria-modal="true" aria-label="요금 안내">
+    <div class="modal">
+      <div class="modal-head">
+        <h3 class="modal-title"><span class="dot" aria-hidden="true"></span>요금 안내</h3>
+        <button class="modal-close" type="button" onclick="closePriceModal()" aria-label="닫기">닫기</button>
+      </div>
+      <div class="modal-body">
+        <div class="price-card">
+          <div class="price-left">
+            <p class="price-tier">스탠다드</p>
+            <p class="price-desc">기본업체확인(공장 or 무역) + 원본 견적서</p>
+          </div>
+          <div class="price-amount">19,000원</div>
+        </div>
+        <p class="modal-note">제출 후 입력하신 연락처로 결제 안내 및 진행 절차를 회신드립니다.</p>
+      </div>
+    </div>
+  </div>
+
+
+  <script>
+    function openPriceModal(){
+      const m = document.getElementById("priceModal");
+      if(!m) return;
+      m.classList.add("show");
+      document.body.style.overflow = "hidden";
+    }
+    function closePriceModal(){
+      const m = document.getElementById("priceModal");
+      if(!m) return;
+      m.classList.remove("show");
+      document.body.style.overflow = "";
+    }
+    // backdrop click closes
+    (function(){
+      const m = document.getElementById("priceModal");
+      if(m){
+        m.addEventListener("click", function(e){
+          if(e.target === m) closePriceModal();
+        });
+      }
+      document.addEventListener("keydown", function(e){
+        if(e.key === "Escape") closePriceModal();
+      });
+    })();
+  </script>
+
+</body>
+</html>
