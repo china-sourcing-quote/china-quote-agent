@@ -762,7 +762,7 @@ margin:0;
         <!-- 이메일 자동 수신(FormSubmit) 설정 -->
         <input type="hidden" name="_subject" value="[견적요청] 신규 접수" />
         <input type="hidden" name="_template" value="table" />
-        <input type="hidden" name="_captcha" value="false" />
+        <input type="text" name="_honey" style="display:none" />
         <!-- 성공 후 이동(원하시면 thankyou.html로 바꿔드릴 수 있습니다) -->
         <input type="hidden" name="_next" value="https://YOUR-DOMAIN-HERE/?success=1" />
 
@@ -830,16 +830,9 @@ margin:0;
             <label for="notes">기타 요구사항 (선택)</label>
             <textarea id="notes" name="additional_notes" placeholder="예: 포장 요구, 색상 옵션, 불량 허용 기준, 샘플 수량 등"></textarea>
           </div>
-
-          <div class="field span-2">
-            <label for="file">첨부 (선택)</label>
-            <input id="file" name="attachment_file" type="file" />
-            <div class="note">MVP 데모에서는 파일이 실제로 전송되지는 않습니다(서버 연동 시 가능).</div>
-          </div>
-
-          <div class="field">
+<div class="field">
             <label for="email">이메일 (필수)</label>
-            <input id="email" name="reply_email" type="email" placeholder="회신 받을 이메일" required />
+            <input id="email" name="email" type="email" placeholder="회신 받을 이메일" required />
           </div>
 
           <div class="field">
@@ -883,8 +876,6 @@ margin:0;
               </label>
             </div>
 
-          </div>
-        </div>
           </div>
         </div>
 
